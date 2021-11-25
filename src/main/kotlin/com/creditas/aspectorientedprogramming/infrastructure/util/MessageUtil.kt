@@ -7,6 +7,8 @@ object MessageUtil {
     const val MESSAGE_0001 = "MESSAGE-0001"
     const val MESSAGE_0002 = "MESSAGE-0002"
     const val MESSAGE_0003 = "MESSAGE-0003"
+    const val MESSAGE_0004 = "MESSAGE-0004"
+    const val MESSAGE_0005 = "MESSAGE-0005"
     private const val MESSAGES = "messages/pt_br"
 
     fun createMessageWithResourceBundle(code: String, vararg params: Any): String {

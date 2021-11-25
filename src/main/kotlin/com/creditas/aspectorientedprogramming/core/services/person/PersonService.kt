@@ -21,10 +21,9 @@ class PersonService(private val repository: IPersonRepository) : AbstractService
 
     fun validateRequest(request: PersonRequest) {
         errors.clearErrors()
-
         validateBirthDate(request.birthDate)
         validateFirstName(request.firstName)
-        validateRequest(request.lastName)
+        validateLastName(request.lastName)
 
         throwErrors(InvalidPersonException(errors.exceptionErrors))
     }
@@ -41,7 +40,7 @@ class PersonService(private val repository: IPersonRepository) : AbstractService
         }
     }
 
-    private fun validateRequest(lastName: String) {
+    private fun validateLastName(lastName: String) {
         if (lastName.isBlank()) {
             errors.addError(createError(MessageUtil.MESSAGE_0002))
         }

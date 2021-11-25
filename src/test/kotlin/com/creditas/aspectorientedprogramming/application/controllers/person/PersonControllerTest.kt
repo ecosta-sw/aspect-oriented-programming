@@ -13,12 +13,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 internal class PersonControllerTest : IntegrationTests() {
 
-
     @Test
     fun `When pass valid data for create a new person, should HTTP STATUS CREATED`() {
         val jsonRequest = readJsonResource("person/request/create_person_with_success")
-        println(jsonRequest)
-
         val responseJson = readJsonResource("person/response/created_person_with_success")
         val expected = mapper.readValue<ResponseDataTO>(responseJson)
 

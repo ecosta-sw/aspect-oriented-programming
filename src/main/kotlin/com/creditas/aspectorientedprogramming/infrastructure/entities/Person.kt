@@ -26,7 +26,6 @@ data class Person(
     @Column(name = LAST_NAME)
     val lastName: String
 ) {
-
     @Id
     @GeneratedValue(generator = "UUID")
     val id: UUID? = null
@@ -38,6 +37,4 @@ data class Person(
     @UpdateTimestamp
     @Column(columnDefinition = "TIMESTAMP", name = UPDATED_AT, nullable = false)
     val updatedAt: LocalDateTime? = null
-
-
 }

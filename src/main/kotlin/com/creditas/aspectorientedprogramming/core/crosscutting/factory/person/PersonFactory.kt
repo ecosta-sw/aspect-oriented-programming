@@ -1,4 +1,4 @@
-package com.creditas.aspectorientedprogramming.core.crosscutting.factory
+package com.creditas.aspectorientedprogramming.core.crosscutting.factory.person
 
 import com.creditas.aspectorientedprogramming.application.controllers.person.resources.request.PersonRequest
 import com.creditas.aspectorientedprogramming.application.controllers.person.resources.response.PersonResponse

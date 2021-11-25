@@ -43,14 +43,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
 
     // TEST DEPENDENCIES
-    testImplementation("org.springframework.boot:spring-boot-starter-test") {
-//        exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
-//        exclude(group = "org.junit.jupiter", module = "junit-jupiter-api")
-//        exclude(group = "org.junit.jupiter", module = "junit-jupiter-engine")
-    }
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
-//    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-//    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:postgresql")
 }

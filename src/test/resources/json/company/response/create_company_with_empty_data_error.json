@@ -1,0 +1,13 @@
+{
+    "code": "UNPROCESSABLE_ENTITY",
+    "errors": [
+        {
+            "code": "MESSAGE-0004",
+            "message": "O Campo Nome Fantasia não pode ser vazio."
+        },
+        {
+            "code": "MESSAGE-0005",
+            "message": "O Campo Razão Social não pode ser vazio."
+        }
+    ]
+}
