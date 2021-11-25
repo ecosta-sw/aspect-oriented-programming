@@ -1,0 +1,43 @@
+version: "3.9"
+
+networks:
+  aspect-oriented-programming-network:
+
+services:
+  aspect-oriented-programming:
+    container_name: aspect-oriented-programming
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgresDB
+    env_file:
+      - .env
+    environment:
+      ENV: docker
+      DATABASE_URL: ${DATABASE_URL}
+    networks:
+      - aspect-oriented-programming-network
+    ports:
+      - "6000:6000"
+      - "5600:5600"
+    command: "java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5600 -jar aspect-oriented-programming.jar"
+  postgresDB:
+    container_name: aspect-oriented-programming-db
+    image: postgres:12-alpine
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DATABASE}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_HOST_AUTH_METHOD: trust
+    networks:
+      - aspect-oriented-programming-network
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresDataDB:/var/lib/postgresql/data
+
+volumes:
+  postgresDataDB:

@@ -1,1 +1,48 @@
+spring:
+  # Profile Configuration
+  profiles:
+    active: ${PROFILE}
+  application:
+    name: aspect-oriented-programming
+  # DataSource Configuration
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    sql-script-encoding: UTF-8
+  # JACKSON properties
+  #  jackson:
+  #    property-naming-strategy: SNAKE_CASE
+  # JPA properties
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob:
+          non_contextual_creation: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    properties:
+      enable_lazy_load_no_trans: true
+  # Logger configuration
+  logging:
+    pattern:
+      console: "%d %-5level %logger : %msg%n"
+    level:
+      org.springframework: info
+      org.hibernate: debug
+  security:
+    user:
+      name: eder
+      password: test
 
+# Server Configuration
+server:
+  port: ${SERVER_PORT} #set your port
+  servlet:
+    context-path: "/api"

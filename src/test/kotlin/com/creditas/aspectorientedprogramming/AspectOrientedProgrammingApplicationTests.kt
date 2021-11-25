@@ -1,13 +1,12 @@
 package com.creditas.aspectorientedprogramming
 
+import com.creditas.aspectorientedprogramming.configuration.IntegrationTests
 import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest
-class AspectOrientedProgrammingApplicationTests {
+class AspectOrientedProgrammingApplicationTests : IntegrationTests() {
 
-	@Test
-	fun contextLoads() {
-	}
+    @Test
+    fun contextLoads() {
+    }
 
 }
